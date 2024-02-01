@@ -13,12 +13,10 @@ public class CreateAccountPage extends BasePage{
     private WebElement inputConfirmPassword;
     @FindBy(xpath = "//button[@type ='submit']")
     private WebElement buttonCreateAnAccount;
-    @FindBy(linkText = "Skaičiuotuvas")
-    private WebElement headerTextLink;
     @FindBy(id = "passwordConfirm.errors")
     private WebElement passwordErrorMessage;
 
-    public void typeFirstName(String name) {
+    public void typeUserName(String name) {
         inputUserName.sendKeys(name);
     }
     public void typePassword(String password) {
@@ -29,9 +27,6 @@ public class CreateAccountPage extends BasePage{
     }
     public void clickSubmit() {
         buttonCreateAnAccount.click();
-    }
-    public String getHeaderText() {
-        return headerTextLink.getText();
     }
     public String getPasswordErrorText() {
         return passwordErrorMessage.getText();
